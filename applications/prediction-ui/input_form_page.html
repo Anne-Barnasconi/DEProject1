@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Baseball Team Selection</title>
+    <script>
+        function validateForm() {
+            var team1 = document.getElementById("team1").value;
+            var team2 = document.getElementById("team2").value;
+            
+            if (team1 === team2) {
+                alert("You cannot choose the same team twice. Please select two different teams.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+<form action="/submitteams" method="POST" onsubmit="return validateForm()">
+    <h1>Choose Two Baseball Teams</h1>
+    <p>Please select two different teams from the following list:</p>
+    <ul>
+        <li>ARI: Arizona Diamondbacks</li>
+        <li>ATL: Atlanta Braves</li>
+        <li>BAL: Baltimore Orioles</li>
+        <li>BOS: Boston Red Sox</li>
+        <li>CHC: Chicago Cubs</li>
+        <li>CHW: Chicago White Sox</li>
+        <li>CIN: Cincinnati Reds</li>
+        <li>CLE: Cleveland Guardians</li>
+        <li>COL: Colorado Rockies</li>
+        <li>DET: Detroit Tigers</li>
+        <li>HOU: Houston Astros</li>
+        <li>KCR: Kansas City Royals</li>
+        <li>LAA: Los Angeles Angels</li>
+        <li>LAD: Los Angeles Dodgers</li>
+        <li>MIA: Miami Marlins</li>
+        <li>MIL: Milwaukee Brewers</li>
+        <li>MIN: Minnesota Twins</li>
+        <li>NYM: New York Mets</li>
+        <li>NYY: New York Yankees</li>
+        <li>OAK: Oakland Athletics</li>
+        <li>PHI: Philadelphia Phillies</li>
+        <li>PIT: Pittsburgh Pirates</li>
+        <li>SDP: San Diego Padres</li>
+        <li>SEA: Seattle Mariners</li>
+        <li>SFG: San Francisco Giants</li>
+        <li>STL: St. Louis Cardinals</li>
+        <li>TBR: Tampa Bay Rays</li>
+        <li>TEX: Texas Rangers</li>
+        <li>TOR: Toronto Blue Jays</li>
+        <li>WSN: Washington Nationals</li>
+        <li>FLA: Florida Marlins</li>
+        <li>TBD: Tampa Bay Devil Rays</li>
+        <li>ANA: Anaheim Angels</li>
+        <li>MON: Montreal Expos</li>
+        <li>CAL: California Angels</li>
+        <li>WSA: Washington Senators</li>
+        <li>SEP: Seattle Pilots</li>
+        <li>KCA: Kansas City Athletics</li>
+        <li>MLN: Milwaukee Braves</li>
+    </ul>
+
+    <label for="team1">Select Team 1:</label>
+    <input type="text" id="team1" name="team1" placeholder="Enter a three-letter team code"> <br>
+
+    <label for="team2">Select Team 2:</label>
+    <input type="text" id="team2" name="team2" placeholder="Enter a three-letter team code"> <br>
+
+    <p><input type="submit" value="Submit Teams"/></p>
+</form>
+
+</body>
+</html>
