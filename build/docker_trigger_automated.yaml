@@ -10,14 +10,14 @@ steps:
       - '-t'
       - >-
         ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/prediction-api:0.0.1
-      - ./applications/prediction-api
+      - ./Applications/prediction-api
   - name: gcr.io/cloud-builders/docker
     args:
       - build
       - '-t'
       - >-
         ${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/prediction-ui:0.0.1
-      - ./applications/prediction-ui
+      - ./Applications/prediction-ui
   - name: gcr.io/cloud-builders/docker
     args:
       - push
