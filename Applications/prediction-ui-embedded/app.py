@@ -7,32 +7,29 @@ from io import StringIO
 import pandas as pd
 from flask import Flask, request, render_template, jsonify
 
-from diabetes_predictor import DiabetesPredictor
+from baseball_predictor import BaseballPredictor
 
 # Flask constructor
 app = Flask(__name__)
 
-dp = DiabetesPredictor(os.environ.get('MODEL_NAME', 'MODEL_NAME environment variable is not set.'))
+dp = BaseballPredictor(os.environ.get('MODEL_NAME', 'MODEL_NAME environment variable is not set.'))
 
 
 # A decorator used to tell the application
 # which URL is associated function
-@app.route('/checkdiabetes', methods=["GET", "POST"])
-def check_diabetes():
+@app.route('/checkbaseball', methods=["GET", "POST"])
+def check_baseball():
     if request.method == "GET":
         return render_template("input_form_page.html")
 
     elif request.method == "POST":
         prediction_input = [
             {
-                "ntp": int(request.form.get("ntp")),  # getting input with name = ntp in HTML form
-                "pgc": int(request.form.get("pgc")),  # getting input with name = pgc in HTML form
-                "dbp": int(request.form.get("dbp")),
-                "tsft": int(request.form.get("tsft")),
-                "si": int(request.form.get("si")),
-                "bmi": float(request.form.get("bmi")),
-                "dpf": float(request.form.get("dpf")),
-                "age": int(request.form.get("age"))
+                "On_base_percentage": float(request.form.get("On_base_percentage")),
+                "Slugging_percentage": float(request.form.get("Slugging_percentage")),
+                "Batting_average": float(request.form.get("Batting_average")),
+                "Opponent_on_base_percentage": float(request.form.get("Opponent_on_base_percentage")),
+                "Opponent_slugging_percentage": float(request.form.get("Opponent_slugging_percentage"))
             }
         ]
         logging.debug("Prediction Input : %s", prediction_input)
