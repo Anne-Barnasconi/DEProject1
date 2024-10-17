@@ -3,7 +3,7 @@ import logging
 from keras.models import load_model
 
 
-class DiabetesPredictor:
+class BaseballPredictor:
     def __init__(self, model_file):
         self.model = load_model(model_file)
 
