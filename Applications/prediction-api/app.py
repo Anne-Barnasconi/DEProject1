@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/baseball_predictor/', methods=['POST'])  # Changed the endpoint
+@app.route('/checkbaseball/', methods=['POST'])  # Changed the endpoint
 def predict_team():
     # Get the prediction input data from the message body as a JSON payload
     prediction_input = request.get_json()
