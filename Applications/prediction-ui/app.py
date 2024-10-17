@@ -11,8 +11,8 @@ app = Flask(__name__)
 
 # A decorator used to tell the application
 # which URL is associated function
-@app.route('/checkdiabetes', methods=["GET", "POST"])
-def check_diabetes():
+@app.route('/checkbaseball', methods=["GET", "POST"])
+def check_baseball():
     if request.method == "GET":
         return render_template("input_form_page.html")
 
@@ -30,7 +30,7 @@ def check_diabetes():
         logging.debug("Prediction input : %s", prediction_input)
 
         # use requests library to execute the prediction service API by sending an HTTP POST request
-        # use an environment variable to find the value of the diabetes prediction API
+        # use an environment variable to find the value of the baseball prediction API
         # json.dumps() function will convert a subset of Python objects into a json string.
         # json.loads() method can be used to parse a valid JSON string and convert it into a Python Dictionary.
         predictor_api_url = os.environ['PREDICTOR_API']
@@ -44,7 +44,7 @@ def check_diabetes():
     else:
         return jsonify(message="Method Not Allowed"), 405  # The 405 Method Not Allowed should be used to indicate
     # that our app that does not allow the users to perform any other HTTP method (e.g., PUT and  DELETE) for
-    # '/checkdiabetes' path
+    # '/checkbaseball' path
 
 
 # The code within this conditional block will only run the python file is executed as a
