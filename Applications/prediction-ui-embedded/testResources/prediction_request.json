@@ -1,12 +1,9 @@
 [
   {
-    "ntp": 1,
-    "pgc": 126,
-    "dbp": 60,
-    "tsft": 0,
-    "si": 0,
-    "bmi": 30.1,
-    "dpf": 0.349,
-    "age": 47
+    "On_base_percentage": 0.74,
+    "Slugging_percentage": 0.76,
+    "Batting_average": 0.81,
+    "Opponent_on_base_percentage": 0.71,
+    "Opponent_slugging_percentage": 0.68
   }
 ]
