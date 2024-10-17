@@ -22,7 +22,7 @@ def check_diabetes():
                 "On_base_percentage": float(request.form.get("On_base_percentage")),
                 "Slugging_percentage": float(request.form.get("Slugging_percentage")),
                 "Batting_average": float(request.form.get("Batting_average")),
-                "Opponent_on_base_percentage": float(request.form.get("opponent_on_base_percentage")),
+                "Opponent_on_base_percentage": float(request.form.get("Opponent_on_base_percentage")),
                 "Opponent_slugging_percentage": float(request.form.get("Opponent_slugging_percentage"))
             }
         ]
