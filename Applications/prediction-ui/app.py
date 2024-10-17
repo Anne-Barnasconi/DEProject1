@@ -19,14 +19,11 @@ def check_diabetes():
     elif request.method == "POST":
         prediction_input = [
             {
-                "ntp": int(request.form.get("ntp")),  # getting input with name = ntp in HTML form
-                "pgc": int(request.form.get("pgc")),  # getting input with name = pgc in HTML form
-                "dbp": int(request.form.get("dbp")),
-                "tsft": int(request.form.get("tsft")),
-                "si": int(request.form.get("si")),
-                "bmi": float(request.form.get("bmi")),
-                "dpf": float(request.form.get("dpf")),
-                "age": int(request.form.get("age"))
+                "on_base_percentage": float(request.form.get("on_base_percentage")),
+                "slugging_percentage": float(request.form.get("slugging_percentage")),
+                "batting_average": float(request.form.get("batting_average")),
+                "opponent_on_base_percentage": float(request.form.get("opponent_on_base_percentage")),
+                "opponent_slugging_percentage": float(request.form.get("opponent_slugging_percentage"))
             }
         ]
 
