@@ -1,28 +1,28 @@
-# importing Flask and other modules
-
+# Importing Flask and other modules
 from flask import Flask, request, render_template, jsonify
 
 # Flask constructor
 app = Flask(__name__)
 
-
-# A decorator used to tell the application
-# which URL is associated function
-@app.route('/checkdiabetes', methods=["GET", "POST"])
-def check_diabetes():
+# A decorator used to associate the URL with a function
+@app.route('/submitteams', methods=["GET", "POST"])
+def submit_teams():
     if request.method == "GET":
+        # Render the input form page (team statistics input)
         return render_template("input_form_page.html")
 
     elif request.method == "POST":
-        ntp = int(request.form.get("ntp"))  # getting input with name = ntp in HTML form
-        pgc = int(request.form.get("pgc"))  # getting input with name = pgc in HTML form
-        dbp = int(request.form.get("dbp"))
-        tsft = int(request.form.get("tsft"))
-        si = int(request.form.get("si"))
-        bmi = float(request.form.get("bmi"))
-        dpf = float(request.form.get("dpf"))
-        age = int(request.form.get("age"))
+        # Extracting form data submitted by the user
+        on_base_percentage = float(request.form.get("on_base_percentage"))
+        slugging_percentage = float(request.form.get("slugging_percentage"))
+        batting_average = float(request.form.get("batting_average"))
+        opponent_on_base_percentage = float(request.form.get("opponent_on_base_percentage"))
+        opponent_slugging_percentage = float(request.form.get("opponent_slugging_percentage"))
 
+
+
+
+        ####### MODEL??????? ########
         # we will replace this simple (and inaccurate logic) with a prediction from a machine learning model in a
         # future in a future lab
         if pgc > 120:
