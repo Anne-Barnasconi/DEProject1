@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Likelihood of Playoffs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .result-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .prediction-yes {
+            color: #4CAF50; /* Groen voor positieve voorspelling */
+            font-weight: bold;
+        }
+
+        .prediction-no {
+            color: #E53935; /* Rood voor negatieve voorspelling */
+            font-weight: bold;
+        }
+
+        .new-prediction-btn {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        .new-prediction-btn:hover {
+            background-color: #357ABD;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-box">
+    <h1>Playoff Prediction</h1>
+
+    {% if prediction_variable==1 %}
+        <p class="prediction-yes">It is likely that the team makes it to the playoffs.</p>
+    {% else %}
+        <p class="prediction-no">It is unlikely that the team makes it to the playoffs.</p>
+    {% endif %}
+
+    <a href="/" class="new-prediction-btn">Make Another Prediction</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Baseball Team Statistics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a90e2;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 10px 0 5px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #357ABD;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="/submitteams" method="POST" onsubmit="return validateForm()">
+    <h1>Enter Team Statistics</h1>
+    <p>Please input the following statistics for your team and the opponent:</p>
+
+    <label for="on_base_percentage">On-base percentage:</label>
+    <input type="text" id="on_base_percentage" name="on_base_percentage" placeholder="e.g., 0.300 - 0.400"> 
+
+    <label for="slugging_percentage">Slugging percentage:</label>
+    <input type="text" id="slugging_percentage" name="slugging_percentage" placeholder="e.g., 0.400 - 0.600"> 
+
+    <label for="batting_average">Batting average:</label>
+    <input type="text" id="batting_average" name="batting_average" placeholder="e.g., 0.200 - 0.350"> 
+
+    <label for="opponent_on_base_percentage">Opponent's on-base percentage:</label>
+    <input type="text" id="opponent_on_base_percentage" name="opponent_on_base_percentage" placeholder="e.g., 0.300 - 0.400"> 
+
+    <label for="opponent_slugging_percentage">Opponent's slugging percentage:</label>
+    <input type="text" id="opponent_slugging_percentage" name="opponent_slugging_percentage" placeholder="e.g., 0.400 - 0.600"> 
+
+    <p><input type="submit" value="Submit Statistics"/></p>
+</form>
+
+</body>
+</html>
