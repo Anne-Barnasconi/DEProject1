@@ -63,13 +63,12 @@
 <div class="result-box">
     <h1>Playoff Prediction</h1>
 
-    {% if prediction_variable==1 %}
-        <p class="prediction-yes">It is likely that the team makes it to the playoffs.</p>
+    {% if prediction_variable %}
+        <p>It is likely that the team makes it to the playoffs.</p>
     {% else %}
-        <p class="prediction-no">It is unlikely that the team makes it to the playoffs.</p>
+        <p>It is unlikely that the team makes it to the playoffs.</p>
     {% endif %}
 
-    <a href="/" class="new-prediction-btn">Make Another Prediction</a>
 </div>
 
 </body>
